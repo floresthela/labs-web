@@ -6,36 +6,53 @@ body {
     background-image: url(iconos/fondo-2.jpg);
     background-size: cover;                 
     background-repeat: no-repeat;
-    background-position: center center;  
+    background-position: center center; 
+    color:white ; 
 }
 .seccion {
 	padding: 30px 30px 30px 30px;
-	background-color: rgb(169,169,169, 0.61);
-	margin: 20px 100px 20px 100px;
+	background-color: black;
+	margin: 20px 250px 20px 250px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
+}
 
-
+.seccion2 {
+	padding: 30px 30px 30px 30px;
+	background-color: white;
+	margin: 20px 250px 20px 250px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	color: black;
 }
 
 #nombre {
-	color: white;
-	background-color: black;
+	color: black;
+	background-color: yellow;
 	font-size: 25px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 #tit {
+	color: white;
+	font-weight: 700;
+	font-size: 40px;
+	margin: 10px 0px 10px 0px;
+	font-family: 'Major Mono Display', monospace;
+
+}
+
+#tit2 {
 	color: black;
 	font-weight: 700;
-	font-size: 50px;
+	font-size: 40px;
 	margin: 10px 0px 10px 0px;
-	font-family: 'Staatliches';
+	font-family: 'Major Mono Display', monospace;
 
 }
 
 #linea {
-	padding-left: 30px;
+	padding-left: 20px;
 	
 }
 
