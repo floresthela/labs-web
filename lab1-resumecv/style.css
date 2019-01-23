@@ -1,0 +1,28 @@
+
+body {
+	font-family: 'IBM Plex Sans', sans-serif;
+}
+.seccion {
+	padding: 30px 30px 30px 30px;
+	background-color: orange; 
+	margin: 20px 100px 20px 100px;
+	
+}
+
+#nombre {
+	color: white;
+	background-color: black;
+}
+
+#tit {
+	color: black;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 700;
+	font-size: 50px;
+	margin: 10px 0px 10px 0px;
+
+}
+
+#linea {
+	padding-left: 30px;
+}
