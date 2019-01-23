@@ -1,28 +1,42 @@
 
 body {
-	font-family: 'IBM Plex Sans', sans-serif;
+    /*font-family: 'Knewave', cursive;*/
+    font-family: 'Staatliches', cursive;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(iconos/fondo-2.jpg);
+    background-size: cover;                 
+    background-repeat: no-repeat;
+    background-position: center center;  
 }
 .seccion {
 	padding: 30px 30px 30px 30px;
-	background-color: orange; 
+	background-color: rgb(169,169,169, 0.61);
 	margin: 20px 100px 20px 100px;
-	
+	font-family: 'Roboto', sans-serif;
+
 }
 
 #nombre {
 	color: white;
 	background-color: black;
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
 }
 
 #tit {
 	color: black;
-	font-family: 'IBM Plex Sans', sans-serif;
 	font-weight: 700;
 	font-size: 50px;
 	margin: 10px 0px 10px 0px;
+	font-family: 'Staatliches';
 
 }
 
 #linea {
 	padding-left: 30px;
+}
+
+.img{
+	max-width: 8%;
+	max-height: 8%;
 }
