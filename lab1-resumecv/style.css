@@ -1,42 +1,47 @@
 
 body {
     /*font-family: 'Knewave', cursive;*/
-    font-family: 'Staatliches', cursive;
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Staatliches', cursive;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Fira Sans', sans-serif;
     background-image: url(iconos/fondo-2.jpg);
     background-size: cover;                 
     background-repeat: no-repeat;
     background-position: center center; 
-    color:white ; 
+    color:white; 
+    line-height: 30px;
 }
 .seccion {
 	padding: 30px 30px 30px 30px;
 	background-color: black;
-	margin: 20px 250px 20px 250px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
+	margin: 20px 300px 20px 300px;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 15px;
+	border-left: 10px solid gray
 }
 
 .seccion2 {
 	padding: 30px 30px 30px 30px;
 	background-color: white;
-	margin: 20px 250px 20px 250px;
-	font-family: 'Roboto', sans-serif;
-	font-size: 18px;
+	margin: 20px 300px 20px 300px;
+	font-family: 'Fira Sans', sans-serif;
+	font-size: 15px;
 	color: black;
+	border-left: 10px solid gray
 }
 
 #nombre {
 	color: black;
 	background-color: yellow;
 	font-size: 25px;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 700;
 }
 
 #tit {
 	color: white;
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 35px;
 	margin: 10px 0px 10px 0px;
 	font-family: 'Major Mono Display', monospace;
 
@@ -45,7 +50,7 @@ body {
 #tit2 {
 	color: black;
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 35px;
 	margin: 10px 0px 10px 0px;
 	font-family: 'Major Mono Display', monospace;
 
@@ -64,4 +69,11 @@ body {
 .material-icons {
 	position: relative;
 	top: 5px;
+}
+
+::selection {
+  background: red; 
+}
+::-moz-selection {
+  background: red; 
 }
