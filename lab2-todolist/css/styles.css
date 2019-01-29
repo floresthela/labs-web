@@ -51,3 +51,7 @@ input[type="text"]:focus {
   text-decoration: line-through;
   color: #8f919c; 
 }
+
+ul li input[type=checkbox]:checked ~ span {
+  text-decoration: line-through;
+}
