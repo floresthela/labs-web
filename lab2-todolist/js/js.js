@@ -17,6 +17,8 @@ function addItem(){
 	checkbox.name = "todo";
 	checkbox.value = "todo_items";
 	checkbox.id = "id";
+	checkbox.autocomplete = "off";
+	
 	li.appendChild(checkbox);
 
 	var newspan = document.createElement("span");

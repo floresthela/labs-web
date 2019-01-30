@@ -69,7 +69,15 @@ ul li input[type=checkbox]:checked ~ span {
 
 button {
   margin: auto;
+  border: none;
   display: block;
+  background-color: #FF0000;
+  color: white;
+  padding: 5px 10px 5px 10px;
+}
+
+button:hover {
+  background-color: #D60000;
 }
 
 ::placeholder {
