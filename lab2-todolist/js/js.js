@@ -1,5 +1,7 @@
 var todo_items = 5;
 
+
+/* agrega un nuevo elemento a la lista, su checkbox y el texto (span) */
 function addItem(){
 
 	todo_items += 1;
@@ -23,9 +25,12 @@ function addItem(){
 	console.log(todo_items);
 }
 
+/* al presionar enter se manda llamar la función para agregar un nuevo elemento a la lista*/
 document.body.onkeyup = function(e) {
 	if (e.keyCode == 13) {
 		addItem();
 	}
 }
+
+/**/
 
