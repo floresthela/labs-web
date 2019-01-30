@@ -85,3 +85,12 @@ button:hover {
   font-style: italic;
   opacity: 0.7;
 }
+
+
+/* cambiar el color de lo que se selecciona con el mouse */
+::selection {
+  background: #FF0000; 
+}
+::-moz-selection {
+  background: #FF0000; 
+}

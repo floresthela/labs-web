@@ -1,4 +1,5 @@
-var todo_items = 5; // tal vez borrar
+/*https://floresthela.github.io/labs-web/lab2-todolist/*/
+
 var doneItems = document.getElementById("done");
 var ul = document.getElementById("lista");
 let deleteButton = document.getElementById("delete");
@@ -9,7 +10,6 @@ setInterval(check, 1000);
 /* agrega un nuevo elemento a la lista, su checkbox y el texto (span) */
 function addItem(){
 
-	todo_items += 1;
 	var item = document.getElementById("input").value;
 
 	if(item == "" || item == null){
@@ -22,7 +22,7 @@ function addItem(){
 		var checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
 		checkbox.name = "todo";
-		checkbox.value = "todo_items";
+		//checkbox.value = "todo_items";
 		checkbox.id = "id";
 		checkbox.autocomplete = "off";
 
