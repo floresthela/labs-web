@@ -1,5 +1,5 @@
-{
-  "fields": [{
+[
+    {
       "field": "General Field",
       "field_id": 1,
       "description": "Award to the Artist and to the Producer(s), Recording Engineer(s) and/or Mixer(s) and mastering engineer(s), if other than the artist.",
@@ -46,8 +46,7 @@
               "nominee": "THE MIDDLE",
               "artist": "Zedd, Maren Morris & Grey",
               "info": "Grey, Monsters & Strangerz & Zedd, producers; Grey, Tom Norris, Ryan Shanahan & Zedd, engineers/mixers; Mike Marsh, mastering engineer"
-            }
-          ],
+            }],
           "winner_id": 2
         },
         {
@@ -822,5 +821,4 @@
         "winner_id": 1
       }]
     }
-  ]
-}
+]
