@@ -1,15 +1,3 @@
-/*tring jsonString = yourstring;
-JSONObject jsonResult = new JSONObject(jsonString);
-JSONArray data = jsonResult.getJSONArray("data");
-if(data != null) {
-    String[] names = new String[data.length()];
-    String[] birthdays = new String[data.length()];
-    for(int i = 0 ; i < data.length() ; i++) {
-        birthdays[i] = data.getString("birthday");
-        names[i] = data.getString("name");
-    }
-}*/
-
 $.ajax({
 	url : "data/grammys.json",
 	type : "GET",
@@ -18,10 +6,10 @@ $.ajax({
 	success: function(data) {
 		let new_html = "";
 
-		for(let i = 0; i < data.length; i++){
+		for(let i = 0; i < data.fields.length; i++){
 			console.log(data.length);
 			new_html += `
-			<option value = "${data[i].field_id}">${data[i].field}
+			<option value = "${data.fields[i].field_id -1 }">${data.fields[i].field}
 			</option>
 			`;
 		}
@@ -36,31 +24,76 @@ $.ajax({
 });
 
 function loadInfo() {
-	var sec = document.getElementById("nominees_section");
 	$.ajax({
 		url: "data/grammys.json",
 		type: "GET",
 		dataType: "json",
 		success: function(data){
-			
-			let new_html = "";
-			$("#category_types").on('change', function(event) {
-				
+			$("#category_types").on("change", function(event){
 				let id = $(this).val();
-				console.log(id);
 				
-				for(let i = 0; i < data.length; i++){
-					if(id == data[i].field_id){
-						console.log(data[i].field);
-						new_html+= `<h1>${data[i].field}</h1>`;
+
+				if(id !== "-1"){
+					let selection = data.fields[id];
+					let new_html = "";
+					
+					// field
+					new_html += 
+					`<h2>${selection.field}</h2>`;
+
+					// desc
+					if(selection.description){
+						new_html += 
+						`<p>${selection.description}</p>`;
+					}
+
+					// categories
+					for(let i = 0; i < selection.categories.length; i++){
+						new_html += 
+						`
+						<h3>${selection.categories[i].category_name}</h3>
+						<ul>
+						`;
+
+						// nominees
+						for(let j = 0; j < selection.categories[i].nominees.length; j++){
+							
+							//es el ganador
+							if(selection.categories[i].winner_id == j) {
+								new_html += 
+								`
+								<li><strong class="winner">${selection.categories[i].nominees[j].nominee}
+								</strong>
+								`;
+							}
+							else{
+								new_html += 
+								`
+								<li><strong>${selection.categories[i].nominees[j].nominee}</strong>
+								`;
+							}
+							new_html += 
+							`
+							<p>${selection.categories[i].nominees[j].artist}</p>
+							<p>${selection.categories[i].nominees[j].info}</p>
+							</li>
+							`;
+						}
+
+						new_html += `</ul>`
 
 					}
 
-
+					$("#nominees_section").html(new_html);
 				}
+
+				else{
+					$("#nominees_section").html("");
+				}
+
+
 			});
-			//document.getElementById("parentID").innerHTML+= "new content"
-			// sec.append(new_html); k pedo
+
 		},
 
 		
