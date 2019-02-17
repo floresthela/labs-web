@@ -12,16 +12,17 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 50px;
+  font-family: 'Bungee Shade', cursive;
 }
 
 
 select {
-  width: 300px;
-  height: 40px;
+  width: 260px;
+  height: 30px;
   overflow: hidden;
   background: url(new_arrow.png) no-repeat right #ddd;
-  border: 1px solid #ccc;
+  border: 2px solid black;
 }
 
 option {
@@ -48,7 +49,7 @@ h3 {
 }
 
 .winner {
-  color: #b69859;
+  -webkit-animation: color-change 1s infinite;
 }
 
 h4 {
@@ -63,4 +64,61 @@ span {
 
 hr {
   margin-top: 30px;
+}
+
+
+@-webkit-keyframes color-change {
+  0% {
+
+    color: #ff000c;
+  }
+
+  10% {
+
+    color: #ff0098;
+  }
+
+  20% {
+
+    color: #fa00ff;
+  }
+
+  30% {
+
+    color: #8c00ff;
+  }
+
+  40% {
+
+    color: #1d00ff;
+  }
+
+  50% {
+
+    color: #00ff43;
+  }
+
+  60% {
+
+    color: #a5ff00;
+  }
+
+  70% {
+
+    color: #fff200;
+  }
+  80% {
+
+    color: #ffb200;
+  }
+
+  90% {
+
+    color: #ff5d00;
+  }
+
+  100% {
+
+    color: #ff0000;
+  }
 }

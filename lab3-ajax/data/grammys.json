@@ -151,42 +151,42 @@
           "nominees": [{
               "nominee": "CHLOE X HALLE",
               "artist": "",
-              "info": ""
+              "info": "Chloe x Halle (stylized as CHLOE X HALLE) is a Grammy-nominated American contemporary R&B duo, made up of two sisters named Chloe and Halle Bailey (born July 1, 1998, and March 27, 2000, respectively)."
             },
             {
               "nominee": "LUKE COMBS",
               "artist": "",
-              "info": ""
+              "info": "Luke Albert Combs (born March 2, 1990) is an American country music singer and songwriter."
             },
             {
               "nominee": "GRETA VAN FLEET",
               "artist": "",
-              "info": ""
+              "info": "Greta Van Fleet are an American rock band from Frankenmuth, Michigan, formed in 2012. It consists of vocalist Josh Kiszka, guitarist Jake Kiszka, bassist Sam Kiszka, and drummer Danny Wagner. They were signed to Lava Records in March 2017[2] and a month later the band released their debut studio EP, Black Smoke Rising."
             },
             {
               "nominee": "H.E.R.",
               "artist": "",
-              "info": ""
+              "info": "Gabriella 'Gabi' Wilson (born June 27, 1997),[1][2] better known by her stage name H.E.R. (pronounced 'her', acronym for Having Everything Revealed), is an American singer and songwriter."
             },
             {
               "nominee": "DUA LIPA",
               "artist": "",
-              "info": ""
+              "info": "Dua Lipa (/ˈduːə ˈliːpə/; Albanian: [ˈdua ˈlipa]; born 22 August 1995) is an English singer-songwriter.Her musical career began at age 14, when she started to cover songs by other artists on YouTube. In 2015, she signed with Warner Music Group and released her first single soon after. "
             },
             {
               "nominee": "MARGO PRINCE",
               "artist": "",
-              "info": ""
+              "info": "Margo Rae Price (born April 15, 1983)is an American country singer-songwriter based in Nashville, Tennessee. "
             },
             {
               "nominee": "BEBE REXHA",
               "artist": "",
-              "info": ""
+              "info": "Bleta 'Bebe' Rexha (/ˈbiːbi ˈreɪdʒɑː/; born August 30, 1989) is an American singer-songwriter and record producer."
             },
             {
               "nominee": "JORJA SMITH",
               "artist": "",
-              "info": ""
+              "info": "Jorja Alice Smith (born 11 June 1997) is a Grammy-nominated English singer-songwriter from Walsall, West Midlands, UK."
             }
           ],
           "winner_id": 4
@@ -565,7 +565,7 @@
             },
             {
               "nominee": "MASSEDUCTION",
-              "artist": "ack Antonoff & Annie Clark, songwriters (St. Vincent)",
+              "artist": "Jack Antonoff & Annie Clark, songwriters (St. Vincent)",
               "info": ""
             },
             {

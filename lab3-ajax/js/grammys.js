@@ -1,3 +1,4 @@
+//https://floresthela.github.io/labs-web/lab3-ajax/
 $.ajax({
 	url : "data/grammys.json",
 	type : "GET",
@@ -90,18 +91,11 @@ function loadInfo() {
 				else{
 					$("#nominees_section").html("");
 				}
-
-
 			});
 
 		},
-
-		
-		
 		error: function(error_msg){
 			console.log(error_msg);
 		}
-
-
 	});
 }
