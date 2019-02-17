@@ -85,6 +85,14 @@ function loadInfo() {
 
 					}
 
+
+					/*$('html, body').animate({
+        scrollTop: $("#field_title").offset().top
+}, 1000);*/
+					$('html,body').animate({
+						scrollTop: $("#nominees_section").offset().top
+					});
+
 					$("#nominees_section").html(new_html);
 				}
 
