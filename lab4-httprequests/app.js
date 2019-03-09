@@ -11,6 +11,7 @@ const readline = require('readline').createInterface({
 	output: process.stdout
 })
 
+// leer de la consola el nombre de la ciudad a checar
 readline.question('Ingresa el nombre de la ciudad: ', function(newCity){
 		urlMapBox = `https://api.mapbox.com/geocoding/v5/mapbox.places/${newCity}.json?access_token=${credentials.MAPBOX_TOKEN}&limit=1`
 		getCoordinates(newCity)
@@ -20,6 +21,7 @@ readline.question('Ingresa el nombre de la ciudad: ', function(newCity){
 )
 
 
+// encontrar las coordenadas de la ciudad con mapbox
 function getCoordinates(cityName){
 	request.get({url:urlMapBox, json:true }, function(error,response,body) {
 		
@@ -35,6 +37,7 @@ function getCoordinates(cityName){
 	})
 }
 
+// sacar los datos a mostrar con darksky
 function weatherInfo(long, lat){
 	let urlDarkSky = `https://api.darksky.net/forecast/${credentials.DARK_SKY_SECRET_KEY}/${lat},${long}?units=si&lang=es`
 	//console.log(urlDarkSky)
