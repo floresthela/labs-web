@@ -1,3 +1,4 @@
+// WEATHER APP
 const credentials = require('./credentials.js')
 const request = require('request')
 
@@ -14,8 +15,9 @@ const readline = require('readline').createInterface({
 // leer de la consola el nombre de la ciudad a checar
 readline.question('Ingresa el nombre de la ciudad: ', function(newCity){
 		urlMapBox = `https://api.mapbox.com/geocoding/v5/mapbox.places/${newCity}.json?access_token=${credentials.MAPBOX_TOKEN}&limit=1`
+		//console.log(urlMapBox)
 		getCoordinates(newCity)
-		console.log(newCity)
+		//console.log(newCity)
 		readline.close()
 	}
 )
@@ -28,6 +30,7 @@ function getCoordinates(cityName){
 		if(error || cityName === ""){
 			console.log("ocurrió un error " + error)
 		} else {
+			console.log(body.features[0].place_name)
 			let longitude = body.features[0].center[0]
 			let latitude = body.features[0].center[1]
 			//console.log(longitude)
