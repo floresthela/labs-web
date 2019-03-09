@@ -3,22 +3,35 @@ const request = require('request')
 
 
 let cityName = 'Monterrey'
+let urlMapBox
 
-let urlMapBox = `https://api.mapbox.com/geocoding/v5/mapbox.places/${cityName}.json?access_token=${credentials.MAPBOX_TOKEN}&limit=1`
-getCoordinates(cityName)
-console.log(cityName)
+
+const readline = require('readline').createInterface({
+	input: process.stdin,
+	output: process.stdout
+})
+
+readline.question('Ingresa el nombre de la ciudad: ', function(newCity){
+		urlMapBox = `https://api.mapbox.com/geocoding/v5/mapbox.places/${newCity}.json?access_token=${credentials.MAPBOX_TOKEN}&limit=1`
+		getCoordinates(newCity)
+		console.log(newCity)
+		readline.close()
+	}
+)
+
 
 function getCoordinates(cityName){
 	request.get({url:urlMapBox, json:true }, function(error,response,body) {
-		if(error){
-			console.log("ocurrió un error" + error)
+		
+		if(error || cityName === ""){
+			console.log("ocurrió un error " + error)
+		} else {
+			let longitude = body.features[0].center[0]
+			let latitude = body.features[0].center[1]
+			//console.log(longitude)
+			// console.log(latitude)
+			weatherInfo(longitude,latitude)
 		}
-		//console.log(urlMapBox)
-		let longitude = body.features[0].center[0]
-		let latitude = body.features[0].center[1]
-		//console.log(longitude)
-		//console.log(latitude)
-		weatherInfo(longitude,latitude)
 	})
 }
 
@@ -27,7 +40,7 @@ function weatherInfo(long, lat){
 	//console.log(urlDarkSky)
 	request.get({ url: urlDarkSky, json: true }, function(error, response, body) {
 			if(error){
-				console.log("ocurrió un error" + error)
+				console.log("ocurrió un error " + error)
 			}
 			let temp = body.currently.temperature
 			let precipitationProb = body.currently.precipProbability
