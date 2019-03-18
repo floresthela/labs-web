@@ -26,7 +26,6 @@ readline.question('Ingresa el nombre de la ciudad: ', function(newCity){
 // encontrar las coordenadas de la ciudad con mapbox
 function getCoordinates(cityName){
 	request.get({url:urlMapBox, json:true }, function(error,response,body) {
-		
 		if(error || cityName === ""){
 			console.log("ocurrió un error " + error)
 		} else {
