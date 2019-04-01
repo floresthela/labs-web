@@ -16,15 +16,15 @@ app.get('/weather', function(req,res){
 		var city_ws = req.query.search;
 		getCoordinates(city_ws, function(error, response){
 			if(error){
-				res.send(error);
+				res.json({error: error});
 				console.log(error);
 			} else{
 				weatherInfo(response[0],response[1], response[2], function(error,response){
 					if(error){
-						res.send(error);
+						res.json({error: error});
 						console.log(error);
 					} else{
-						res.send(response);
+						res.json(response);
 					}
 				});
 			}
@@ -37,13 +37,13 @@ function getCoordinates(cityName, callback){
 	urlMapBox = `https://api.mapbox.com/geocoding/v5/mapbox.places/${cityName}.json?access_token=${credentials.MAPBOX_TOKEN}&limit=1`;
 	request.get({url:urlMapBox, json:true }, function(error,response,body) {
 		if(error){
-			callback("ERROR para acceder al sitio (MapBox) - checar conexión a internet");
+			callback("No se pudo acceder al sitio (Mapbox) - checar conexión a internet");
 		} 
 		else if (response.statusCode != 200) {
-			callback("ERROR en las credenciales para acceder a las coordenadas (MapBox)");
+			callback("Faltan credenciales para acceder a las coordenadas (Mapbox) o están incorrectas");
 		}
 		else if(body.features.length === 0){
-			callback("ERROR en la ciudad ingresada, no fue encontrada");
+			callback("No se encontró la ciudad ingresada");
 		}
 		else {
 			
@@ -62,10 +62,10 @@ function weatherInfo(long, lat, city, callback){
 	//console.log(urlDarkSky)
 	request.get({ url: urlDarkSky, json: true }, function(error, response, body) {
 			if(error){
-				callback("ERROR para acceder al sitio (DarkSky) - checar conexión a internet");
+				callback("No se pudo acceder al sitio (DarkSky) - checar conexión a internet");
 			}
 			else if(response.statusCode != 200) {
-				callback("ERROR en las credenciales para acceder a los datos del clima (DarkSky)");
+				callback("Faltan credenciales para acceder a las coordenadas (DarkSky) o están incorrectas");
 			}
 			else{
 				let temp = body.currently.temperature;
@@ -76,10 +76,16 @@ function weatherInfo(long, lat, city, callback){
 					location: city,
 					weather: dayResponse
 				};
-				callback(webServerResponse);
+				callback(undefined,webServerResponse);
 			}
 	});
 }
+
+app.get('*', function(req, res){
+    res.send({
+        error:'Aquí no hay nada'
+    })
+})
 
 app.listen(port, function(){
 	console.log('up and running port 3000');
